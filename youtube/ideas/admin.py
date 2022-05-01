@@ -5,7 +5,9 @@ from .models import Idea, Vote
 # Register your models here.
 @admin.register(Idea)
 class IdeaAdmin(admin.ModelAdmin):
-    list_display = ['title', 'status']
+    list_display = ['title', 'status', 'youtube_url']
+    search_fields = ['title']
+    list_filter = ['status']
 
 
 @admin.register(Vote)
