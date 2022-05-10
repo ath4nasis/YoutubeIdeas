@@ -21,3 +21,6 @@ class Idea(models.Model):
 class Vote(models.Model):
     idea = models.ForeignKey(Idea, on_delete=models.CASCADE)
     reason = models.TextField()
+
+    def __str__(self):
+        return f'Vote ID: {self.id}'
